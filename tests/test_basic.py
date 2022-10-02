@@ -1,4 +1,4 @@
-import scikit_build_example as m
+import uwsgi_bind_vector as m
 
 
 def test_version():

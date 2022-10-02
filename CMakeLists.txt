@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15...3.22)
 
-project(scikit_build_example VERSION "0.0.1")
+project(uwsgi_bind_vector VERSION "0.0.1")
 
 if(SKBUILD)
   # Scikit-Build does not add your site-packages to the search path

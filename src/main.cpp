@@ -1,4 +1,8 @@
 #include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
+#include <pybind11/stl_bind.h>
+
+#include <vector>
 
 #define STRINGIFY(x) #x
 #define MACRO_STRINGIFY(x) STRINGIFY(x)
@@ -6,6 +10,10 @@
 int add(int i, int j) {
     return i + j;
 }
+
+struct pod {
+    int foo;
+};
 
 namespace py = pybind11;
 
@@ -34,6 +42,8 @@ PYBIND11_MODULE(_core, m) {
 
         Some other explanation about the subtract function.
     )pbdoc");
+
+    py::bind_vector<std::vector<pod>>(m, "PodList");
 
 #ifdef VERSION_INFO
     m.attr("__version__") = MACRO_STRINGIFY(VERSION_INFO);
